@@ -1,0 +1,22 @@
+step 1:
+1. Connect to Azure Cloud Shell
+
+step 2:
+create resource group : 
+az group create --name new-rg --location southcentralus 
+
+* creating three resource group in single command:
+powershell: new-AzResourceGroup -Name rg-1 -l westus && new-AzResourceGroup -Name rg-2 -location westus && new-AzResourceGroup -Name rg-3 -location westus
+cloudshell: az group create -n rg-4 -l westus && az group create -n rg-5 -l westus && az group create -n rg-6 -l westus
+
+* you will get resource group in table format
+Get-AzResourceGroup |Format-Table
+az group list -o table
+
+Get-AzResourceGroup -location westus |Format-Table
+az group list --query "[?location == 'westus']"
+
+* delet reg group:
+Get-azresourceGroup -l westus | remove-azresourcegroup -Force
+az group list --query "[?location == 'westus']".name -o tsv | xargs -otl az group delete -n
+az group list --query "[?location=='westus'].name" --output tsv | xargs -I {} az group delete --name {} --yes --no-wait
