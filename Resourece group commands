@@ -10,13 +10,14 @@ powershell: new-AzResourceGroup -Name rg-1 -l westus && new-AzResourceGroup -Nam
 cloudshell: az group create -n rg-4 -l westus && az group create -n rg-5 -l westus && az group create -n rg-6 -l westus
 
 * you will get resource group in table format
-Get-AzResourceGroup |Format-Table
-az group list -o table
+powershell: Get-AzResourceGroup |Format-Table
+cloudshell: az group list -o table
 
-Get-AzResourceGroup -location westus |Format-Table
-az group list --query "[?location == 'westus']"
+* you will get resource group location with table format
+powershell: Get-AzResourceGroup -location westus |Format-Table
+cloudshell: az group list --query "[?location == 'westus']"
 
 * delet reg group:
-Get-azresourceGroup -l westus | remove-azresourcegroup -Force
-az group list --query "[?location == 'westus']".name -o tsv | xargs -otl az group delete -n
-az group list --query "[?location=='westus'].name" --output tsv | xargs -I {} az group delete --name {} --yes --no-wait
+powershell: Get-azresourceGroup -l westus | remove-azresourcegroup -Force
+cloudshell: az group list --query "[?location == 'westus']".name -o tsv | xargs -otl az group delete -n
+cloudshell: az group list --query "[?location=='westus'].name" --output tsv | xargs -I {} az group delete --name {} --yes --no-wait
