@@ -20,4 +20,4 @@ cloudshell: az group list --query "[?location == 'westus']"
 * delet reg group:
 powershell: Get-azresourceGroup -l westus | remove-azresourcegroup -Force
 cloudshell: az group list --query "[?location == 'westus']".name -o tsv | xargs -otl az group delete -n
-cloudshell: az group list --query "[?location=='westus'].name" --output tsv | xargs -I {} az group delete --name {} --yes --no-wait
+cloudshell (this method will not ask confirmation): az group list --query "[?location=='westus'].name" --output tsv | xargs -I {} az group delete --name {} --yes --no-wait
