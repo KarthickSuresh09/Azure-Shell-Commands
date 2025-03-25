@@ -32,3 +32,16 @@ az resource move --destination-group rg-2 --ids $(az storage account show --name
 
 * After moving, check if the storage account is now in rg-2  
 az storage account list --resource-group rg-2 --output table
+
+* Create 3 Storage Accounts with "Team" Tags (team1, team2, and team3)
+az storage account create --name team1 --resource-group rg-1 --location eastus --sku Standard_LRS --tags Team=team1
+az storage account create --name 2team --resource-group rg-1 --location eastus --sku Standard_LRS --tags Team=team2
+az storage account create --name 3team --resource-group rg-1 --location eastus --sku Standard_LRS --tags Team=team3
+
+az storage account create --name team2storageextra --resource-group rg-1 --location eastus --sku Standard_LRS --tags Team=team2
+
+
+* List All Resources for team2 Using Tags
+az resource list --tag Team=team2 --output table
+
+
