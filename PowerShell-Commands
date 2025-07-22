@@ -1,0 +1,9 @@
+this command will show your Subscription
+Get-AzSubscription
+
+
+to select a particular subscribation
+Set-Azcontext -Subscription f4281d5b-f223-4b90-87ca-af530b9758aa -Tenant {Tenant}
+SubscriptionName     SubscriptionId                       Account   Environment
+----------------     --------------                       -------   -----------
+Azure subscription 1 f4281d5b-f223-4b90-87ca-af530b9758aa MSI@50342 AzureCloud
