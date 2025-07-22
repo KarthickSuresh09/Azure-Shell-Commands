@@ -1,0 +1,27 @@
+it will list all the subscribation
+az account list
+* ==> like this
+[
+  {
+    "cloudName": "AzureCloud",
+    "homeTenantId": "1db28cee-c85a-48a9-bcda-9a26d53e439f",
+    "id": "f4281d5b-f223-4b90-87ca-af530b9758aa",
+    "isDefault": true,
+    "managedByTenants": [],
+    "name": "Azure subscription 1",
+    "state": "Enabled",
+    "tenantId": "1db28cee-c85a-48a9-bcda-9a26d53e439f",
+    "user": {
+      "cloudShellID": true,
+      "name": "live.com#prem0295kumar@gmail.com",
+      "type": "user"
+    }
+  }
+]
+
+This command select the subscription
+az account set --subscription "Azure subscription 1"
+
+Now you can check which subscription you selected 
+az account show
+
