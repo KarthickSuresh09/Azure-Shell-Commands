@@ -25,3 +25,18 @@ az account set --subscription "Azure subscription 1"
 Now you can check which subscription you selected 
 az account show
 
+
+This command will list all resource group in table format
+az group list -o table
+Name              Location      Status
+----------------  ------------  ---------
+New-RG-22         centralindia  Succeeded
+test16            southindia    Succeeded
+NetworkWatcherRG  westus3       Succeeded
+
+
+It will list all resource group
+az group list
+
+this command will delete your resource group
+az group delete --name New-RG-22
