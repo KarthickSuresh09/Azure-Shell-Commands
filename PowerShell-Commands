@@ -7,3 +7,20 @@ Set-Azcontext -Subscription f4281d5b-f223-4b90-87ca-af530b9758aa -Tenant {Tenant
 SubscriptionName     SubscriptionId                       Account   Environment
 ----------------     --------------                       -------   -----------
 Azure subscription 1 f4281d5b-f223-4b90-87ca-af530b9758aa MSI@50342 AzureCloud
+
+
+This Command will create resource group
+PS /home/premkumar> New-AzResourceGroup -Name RG-22 -Location "Central India"                                                                                 
+                         
+ResourceGroupName : RG-22
+Location          : centralindia
+ProvisioningState : Succeeded
+Tags              : 
+ResourceId        : /subscriptions/f4281d5b-f223-4b90-87ca-af530b9758aa/resourceGroups/RG-22
+
+this will delete resource group
+Remove-AzResourceGroup -Name RG-22  
+
+this will delete resource group forcefully
+Remove-AzResourceGroup -Name RG-22 -Force
+True
